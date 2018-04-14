@@ -2,7 +2,7 @@
 //  Note+CoreDataProperties.swift
 //  RecordDemoWithCoreData
 //
-//  Created by EthanLin on 2018/4/10.
+//  Created by EthanLin on 2018/4/14.
 //  Copyright © 2018年 EthanLin. All rights reserved.
 //
 //

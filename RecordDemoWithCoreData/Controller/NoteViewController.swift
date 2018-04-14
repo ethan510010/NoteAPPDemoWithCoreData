@@ -39,6 +39,8 @@ class NoteViewController: UIViewController /* SaveTitleAndContentDelegate */  {
         super.viewDidLoad()
         categoryTableView.delegate = self
         categoryTableView.dataSource = self
+        categoryTableView.backgroundColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 0.5)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -92,7 +94,15 @@ extension NoteViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    //可以讓現在沒有tableView的部分，被footer的View蓋住，原理是寫上一個ViewForFooter等於一個section的完成，但因為我們只讓tableView顯示一個section，所以其它自然了就不會出現
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+//        view.backgroundColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 0.5)
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         performSegue(withIdentifier: "goEditVC", sender: self.noteArray[indexPath.row])
     }
     
