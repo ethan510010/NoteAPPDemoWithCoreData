@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLd-kZ-P7n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mLd-kZ-P7n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,11 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jairph-418199-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="2Us-tj-Yub">
+                                <rect key="frame" x="-0.5" y="32" width="375" height="667"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Au-M5-avv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="zbX-dD-ksV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="zbX-dD-ksV">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbX-dD-ksV" id="fvt-rX-QD8">
@@ -39,8 +42,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5Au-M5-avv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0ql-6P-4DQ"/>
+                            <constraint firstItem="2Us-tj-Yub" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="818-Bw-hjH"/>
                             <constraint firstItem="5Au-M5-avv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NUw-MJ-05B"/>
                             <constraint firstItem="5Au-M5-avv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZE7-MT-5v7"/>
+                            <constraint firstItem="2Us-tj-Yub" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="acj-EN-DUt"/>
+                            <constraint firstItem="2Us-tj-Yub" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gRN-nc-fhm"/>
+                            <constraint firstItem="2Us-tj-Yub" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hWT-w2-TGg"/>
                             <constraint firstItem="5Au-M5-avv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r3D-He-AjC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,16 +77,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入標題" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRF-W6-iNZ">
-                                <rect key="frame" x="37.5" y="94" width="300" height="28"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="emanuel-hahn-200491-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="665-vF-G90">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="輸入標題" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRF-W6-iNZ" customClass="CustomTextField" customModule="RecordDemoWithCoreData" customModuleProvider="target">
+                                <rect key="frame" x="37.5" y="94" width="300" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HRF-W6-iNZ" secondAttribute="height" multiplier="107:10" id="vzI-42-3b6"/>
+                                    <constraint firstAttribute="width" secondItem="HRF-W6-iNZ" secondAttribute="height" multiplier="107:15" id="vzI-42-3b6"/>
                                 </constraints>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="輸入內容" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-iG-bd7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-iG-bd7" customClass="CustomTextView" customModule="RecordDemoWithCoreData" customModuleProvider="target">
                                 <rect key="frame" x="37.5" y="143" width="300" height="252"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -88,11 +101,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5RA-kz-l78">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5RA-kz-l78">
                                 <rect key="frame" x="0.0" y="400" width="375" height="267"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="150" id="yVX-wT-LUr" customClass="PhotoTableViewCell" customModule="RecordDemoWithCoreData" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" rowHeight="150" id="yVX-wT-LUr" customClass="PhotoTableViewCell" customModule="RecordDemoWithCoreData" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yVX-wT-LUr" id="fKM-5j-cDj">
@@ -100,19 +113,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Pd-0L-pd6">
-                                                    <rect key="frame" x="75" y="15" width="225" height="120"/>
+                                                    <rect key="frame" x="37.5" y="5" width="300" height="140"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="9Pd-0L-pd6" secondAttribute="height" multiplier="15:8" id="67s-YI-IhR"/>
+                                                        <constraint firstAttribute="width" secondItem="9Pd-0L-pd6" secondAttribute="height" multiplier="15:7" id="67s-YI-IhR"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="9Pd-0L-pd6" firstAttribute="centerY" secondItem="fKM-5j-cDj" secondAttribute="centerY" id="QEx-gX-hAs"/>
                                                 <constraint firstItem="9Pd-0L-pd6" firstAttribute="centerX" secondItem="fKM-5j-cDj" secondAttribute="centerX" id="bxa-Bx-vf0"/>
-                                                <constraint firstItem="9Pd-0L-pd6" firstAttribute="width" secondItem="fKM-5j-cDj" secondAttribute="width" multiplier="0.6" id="poE-Ei-NRC"/>
+                                                <constraint firstItem="9Pd-0L-pd6" firstAttribute="width" secondItem="fKM-5j-cDj" secondAttribute="width" multiplier="0.8" id="poE-Ei-NRC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="photoImageview" destination="9Pd-0L-pd6" id="DDf-UC-p8o"/>
                                         </connections>
@@ -120,7 +134,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HRF-W6-iNZ" firstAttribute="centerX" secondItem="vDR-tf-RiR" secondAttribute="centerX" id="0JI-nQ-nZg"/>
                             <constraint firstItem="5RA-kz-l78" firstAttribute="leading" secondItem="4ZI-8t-7dr" secondAttribute="leading" id="36Y-F9-2qD"/>
@@ -210,4 +224,8 @@
             <point key="canvasLocation" x="-214" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="emanuel-hahn-200491-unsplash" width="3494" height="4659"/>
+        <image name="jairph-418199-unsplash" width="3133" height="4700"/>
+    </resources>
 </document>

@@ -34,12 +34,12 @@ class EditNoteViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     //因為現在沒有真的使用CoreData所以先用delegate傳資訊到前一個畫面
-//    var delegate:SaveTitleAndContentDelegate?
+    //    var delegate:SaveTitleAndContentDelegate?
     
     //接收前一個畫面傳過來的note
     var note:Note?
     
-//    var photoes:[Data] = [Data]()
+    //    var photoes:[Data] = [Data]()
     
     //photoes資料改變，此tableView就reloadData
     var photoes: [Photo] = [Photo](){
@@ -65,7 +65,7 @@ class EditNoteViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
         guard let topic = topicTextField.text, let content = contentTextView.text else {return}
-//        delegate?.saveNote(title: topic, content: content)
+        //        delegate?.saveNote(title: topic, content: content)
         
         //如果筆記已經存在，就更新資料；如果原本不存在則新存到CoreData中
         if self.note != nil{
@@ -97,17 +97,19 @@ class EditNoteViewController: UIViewController, UINavigationControllerDelegate, 
         //
         
         photo.image = imageData as NSData
-        //給予照片號碼
+        //選完照片後給予照片號碼
         photo.number = Int16(self.photoes.count)
         self.photoes.append(photo)
-
+        
         dismiss(animated: true, completion: nil)
-
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        topicTextField.delegate = self
+        contentTextView.delegate = self
         photoTableView.delegate = self
         photoTableView.dataSource = self
         
@@ -130,8 +132,9 @@ class EditNoteViewController: UIViewController, UINavigationControllerDelegate, 
         //把toolbar加到contentTextView的keyboard上
         contentTextView.inputAccessoryView = self.toolbar
         
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -160,8 +163,8 @@ class EditNoteViewController: UIViewController, UINavigationControllerDelegate, 
         note.content = content
         //2. 存圖片
         for eachPhoto in self.photoes{
-//            var photo = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as! Photo
-//            note.addToNoteImages(photo)
+            //            var photo = NSEntityDescription.insertNewObject(forEntityName: "Photo", into: context) as! Photo
+            //            note.addToNoteImages(photo)
             note.addToNoteImages(eachPhoto)
         }
         
@@ -213,9 +216,9 @@ extension EditNoteViewController: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         if let photoData = self.photoes[indexPath.row].image as? Data{
             cell.photoImageview.image = UIImage(data: photoData)
-//            print("image", cell.photoImageview.image)
+            //            print("image", cell.photoImageview.image)
         }
-//        cell.photoImageview.image = UIImage(data: photoes[indexPath.row] as! Data)
+        //        cell.photoImageview.image = UIImage(data: photoes[indexPath.row] as! Data)
         return cell
     }
     
@@ -237,6 +240,20 @@ extension EditNoteViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
-  
+}
+
+extension EditNoteViewController: UITextViewDelegate, UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+        
+    }
 }
